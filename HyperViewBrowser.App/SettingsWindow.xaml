@@ -1,0 +1,44 @@
+<Window x:Class="HyperViewBrowser.App.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="380" Width="460" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Homepage" VerticalAlignment="Center"/>
+        <TextBox x:Name="HomepageBox" Grid.Row="0" Grid.Column="1" Margin="0,0,0,8"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Theme" VerticalAlignment="Center"/>
+        <ComboBox x:Name="ThemeBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,8">
+            <ComboBoxItem Content="System"/>
+            <ComboBoxItem Content="Light"/>
+            <ComboBoxItem Content="Dark"/>
+        </ComboBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="User Agent" VerticalAlignment="Center"/>
+        <TextBox x:Name="UserAgentBox" Grid.Row="2" Grid.Column="1" Margin="0,0,0,8"/>
+
+        <CheckBox x:Name="SuggestionsCheck" Grid.Row="3" Grid.ColumnSpan="2" Content="Enable address bar suggestions" Margin="0,0,0,6"/>
+        <CheckBox x:Name="ContextMenuCheck" Grid.Row="4" Grid.ColumnSpan="2" Content="Enable right-click context menu" Margin="0,0,0,6"/>
+        <CheckBox x:Name="JsCheck" Grid.Row="5" Grid.ColumnSpan="2" Content="Enable JavaScript" Margin="0,0,0,6"/>
+        <CheckBox x:Name="PermissionCheck" Grid.Row="6" Grid.ColumnSpan="2" Content="Ask for camera/microphone/location permissions"/>
+
+        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Width="90" Margin="0,0,8,0" Content="Cancel" Click="Cancel_Click"/>
+            <Button Width="90" Content="Save" Click="Save_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
